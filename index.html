@@ -4,27 +4,105 @@
 		<meta charset="UTF-8">
 		<title>Create account</title>
 		<link rel="stylesheet" href="style.css">
-		<style>
-			.div-1{
-				background-color: aquamarine;
-			}
-		</style>
 	</head>
-<body>
-	<script src="index.js"></script>
-	<div class="div-1">HOLA</div>
-	<div class="card">
-		<h1>CREATE ACCOUNT</h1>
-		<form action="">
-			<p>Nombre</p>
-			<input type="text" id="nombre">
+	<body>
+		<div class="card">
+		<h1>Create Account</h1>
+		<form action="#" method="get">
+			<!-- <div class="form-item">
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" name="nombre">
+			</div>
+			<br>
+			<div  class="form-item">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" pattern="/^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/">	
+				<div id="error" class="error_msg">Rellene este campo</div>
+				<div id="ok" class="ok_msg"></div>
+			</div>
+			<br>
+			<div  class="form-item">
+				<label for="password">Clave</label>
+				<input type="password" id="pass" name="pass" maxlength="8">	
+			</div>
+			<br>
+			<div  class="form-item">
+				<label for="confirm-pass">Confirme clave</label>
+				<input type="password" id="confirm_pass" name="confirm_pass"  maxlength="8">	
+			</div>
+			<br>
+			<div class="send_button">
+				<button type="button" onclick="alert('La inscripcción ha sido correcta');">Enviar</button>
+			</div> -->
+			<!-- <p>Nombre</p>
+				<input type="text" id="nombre">
 			<p>Email</p>
 			<input type="email" id="email" >
 			<p>Clave</p>
 			<input type="text" id="clave" maxlength="8">
 			<p>Confirme clave</p>
-			<input type="text" id="clave" maxlength="8">
+			<input type="text" id="clave" maxlength="8"> -->
+			<div>
+				<label for="nombre">Nombre</label>
+				<div class="brillo">
+					<input type="text" id="nombre">
+					<!-- <img src="images/error-icon.svg" alt=""> -->
+					<img src="images/success-icon.svg" alt="">
+				</div>
+				<p data-mensaje="Rellene este campo"></p>
+				<br>
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<div  class="brillo">
+					<input type="email" id="email">
+					<img class="icon-no" src="images/error-icon.svg" alt="">
+					<img class="icon-ok" src="images/success-icon.svg" alt=""> 
+				</div>
+				<p data-mensaje="Email inválido"></p>
+				<br>
+			</div>
+			<div>
+				<label for="password">Clave</label>
+				<div  class="brillo">
+					<input type="password" id="password">
+					<img class="icon-no" src="images/error-icon.svg" alt="">
+					<img class="icon-ok" src="images/success-icon.svg" alt=""> 
+				</div>
+				<p data-mensaje="No debe tener más de 8 caracteres"></p>
+				<br>
+			</div>			
+			<div>
+				<label for="confirm-password">Confirme clave</label>
+				<div  class="brillo">
+					<input type="password" id="confirm-password">
+					<!-- <img src="images/error-icon.svg" alt=""> -->
+					<img src="images/success-icon.svg" alt=""> 
+				</div>
+				<p data-mensaje="Las contraseñas no coinciden"></p>
+				<br>
+			</div>
 		</form>
 	</div>
+	<script src="index.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+<!--
+	tipos de  errores:
+	- nombre solo texto, sin caracteres  numéricos
+	- email validación de correo electrónico mediante expresiones regulares. si no error de: "Email inválido"
+	- campo clave deberá  tener máximo 8 caracteres. Si  no sale error: "No debe tener más de 8 caracteres"
+		- los valores introducidos en clave y confirmación clave deben ser idénticos o se obtendrá error: "Las contraseñas no coinciden"
+		- al pulsar enviar deberá salir un alert por pantalla informando de que la inscripción ha sido correcta si posible
+			si no lo es: errores  de "Rellene este campo"
+
+
+
+			https://blog.nubecolectiva.com/como-verificar-si-2-contrasenas-coinciden-o-son-iguales-con-javascript/
+-->
