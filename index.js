@@ -120,34 +120,57 @@ function check_confirm_password(event){
 // });
 
 
+function is_validated() {
+	const form = document.getElementById("formulario");
+	const form_elem = form.elements;
+	let is_valid = true;
+
+	for (let i = 0; i < form_elem.length; i++)
+	{
+		const elem = form_elem[i];
+
+		if(elem.nodeName !== "button" && !elem.classList.contains("valid"))
+		{
+			is_valid = false;
+			break;
+		}
+	}
+	return is_valid
+}
+
+
+
+
+
+
 
 
 function check_valid_input(event)
 {
-	var id_bt = document.getElementById("button");
-
-		// alert("lol");
-	do_alert_valid(event);
+	if (!is_validated())
+	{
+		alert("La inscripción se ha realizado correctamente");
+	}
 	// funcion que te valide id a id de los campos si son validos o no -> return alerta aqui;
 	// sino, alerta en esa funcion
    
 }
 
-function do_alert_valid(event)
-{
-	var  input_list = document.getElementById("nombre");
-	let  valid = true;
-	const msg_error = input_list.target.parentElement.parentElement.getElementsByTagName("p")[0];
+// function do_alert_valid(event)
+// {
+// 	var  input_list = document.getElementById("nombre");
+// 	let  valid = true;
+// 	const msg_error = input_list.target.parentElement.parentElement.getElementsByTagName("p")[0];
 
-	// alert(input_list.value);
-	if (input_list.value == "")
-	{
-		alert("sdfgdsg");
+// 	// alert(input_list.value);
+// 	if (input_list.value == "")
+// 	{
+// 		alert("sdfgdsg");
 
-	}
+// 	}
 		
 	
-}
+// }
 
 /*
 function check_valid_input() 
