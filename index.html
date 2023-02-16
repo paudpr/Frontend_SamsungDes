@@ -46,10 +46,10 @@
 				<label for="nombre">Nombre</label>
 				<div class="brillo">
 					<input type="text" id="nombre">
-					<!-- <img src="images/error-icon.svg" alt=""> -->
-					<img src="images/success-icon.svg" alt="">
+					<img class="icon-no" src="images/error-icon.svg" alt="">
+					<img class="icon-ok" src="images/success-icon.svg" alt="">
 				</div>
-				<p data-mensaje="Rellene este campo"></p>
+				<p data-mensaje="No debe tener caracteres numéricos"></p>
 				<br>
 			</div>
 			<div>
@@ -76,20 +76,21 @@
 				<label for="confirm-password">Confirme clave</label>
 				<div  class="brillo">
 					<input type="password" id="confirm-password">
-					<!-- <img src="images/error-icon.svg" alt=""> -->
+					<img src="images/error-icon.svg" alt="">
 					<img src="images/success-icon.svg" alt=""> 
 				</div>
 				<p data-mensaje="Las contraseñas no coinciden"></p>
 				<br>
 			</div>
+			<div class="send_button" >
+				<button id="button" onclick="check_valid_input()">Enviar</button>
+			</div>
+			<br>
 		</form>
 	</div>
 	<script src="index.js"></script>
 </body>
 </html>
-
-
-
 
 
 

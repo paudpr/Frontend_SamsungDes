@@ -125,10 +125,12 @@ form{
 }
 
 .brillo.valid{
+	/* border: 1px green; */
 	box-shadow: 0 0 10px green;
 }
 
 .brillo.error{
+	/* border: 1px red; */
 	box-shadow: 0 0 10px red;
 }
 
@@ -165,4 +167,14 @@ input:placeholder-shown ~ img[class="icon-ok"]{
 
 p{
 	color: rgb(143, 21, 21);
+}
+
+button{
+	background-color: white;
+	border: none;
+	/* border: 1px solid #D6D9DC; */
+	border-radius: 3px;
+	width: 100%;
+	padding: 12px;
+	font-size: 14px;
 }
