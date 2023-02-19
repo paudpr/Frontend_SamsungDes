@@ -12,21 +12,18 @@ function check_text(event){
 		parent_elem.classList.remove("valid");
 		parent_elem.classList.add("error");
 		msg_error.textContent = msg_error.dataset.mensaje;
-		return(1);
 	}
 	else if (event.target.value == "")
 	{
 		parent_elem.classList.remove("error");
 		parent_elem.classList.remove("valid");
 		msg_error.textContent = "";
-		return (-1);
 	}
 	else
 	{
 		parent_elem.classList.add("valid");
 		parent_elem.classList.remove("error");
 		msg_error.textContent = "";
-		return(0);
 	}
 }
 
@@ -43,20 +40,17 @@ function check_email(event){
 		parent_elem.classList.remove("error");
 		parent_elem.classList.add("valid");
 		msg_error.textContent = "";
-		return(1);
 	}
 	else if (event.target.value == "")
 	{
 		parent_elem.classList.remove("error");
 		parent_elem.classList.remove("valid");
 		msg_error.textContent = "";
-		return (-1);
 	}
 	else{
 		parent_elem.classList.add("error");
 		parent_elem.classList.remove("valid");
 		msg_error.textContent = msg_error.dataset.mensaje;
-		return(0);
 	}
 }
 
@@ -73,21 +67,18 @@ function check_password(event) {
 		parent_elem.classList.remove("valid");
 		parent_elem.classList.add("error");
 		msg_error.textContent = msg_error.dataset.mensaje;
-		return(1);
 	}
 	else if (event.target.value == "")
 	{
 		parent_elem.classList.remove("error");
 		parent_elem.classList.remove("valid");
 		msg_error.textContent = "";
-		return (-1);
 	}
 	else
 	{
 		parent_elem.classList.add("valid");
 		parent_elem.classList.remove("error");
 		msg_error.textContent = "";
-		return(0);
 	}
 }
 
@@ -105,21 +96,18 @@ function check_confirm_password(event){
 		parent_elem.classList.remove("valid");
 		parent_elem.classList.add("error");
 		msg_error.textContent = msg_error.dataset.mensaje;
-		return(1);
 	}
 	else if (event.target.value == "")
 	{
 		parent_elem.classList.remove("error");
 		parent_elem.classList.remove("valid");
 		msg_error.textContent = "";
-		return (-1);
 	}
 	else
 	{
 		parent_elem.classList.add("valid");
 		parent_elem.classList.remove("error");
 		msg_error.textContent = "";
-		return (0);
 	}
 }
 
