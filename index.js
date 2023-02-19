@@ -99,7 +99,7 @@ function check_confirm_password(event){
 	const parent_elem = event.target.parentElement;
 	const msg_error = parent_elem.parentElement.getElementsByTagName("p")[0];
 	const pass_orig = document.getElementById("password").value;
-
+	
 	if (pass2.value !== pass_orig)
 	{
 		parent_elem.classList.remove("valid");
@@ -122,6 +122,9 @@ function check_confirm_password(event){
 		return (0);
 	}
 }
+
+const button = document.getElementById("button");
+button.addEventListener("click", validate);
 
 function check_filled(){
 	var count = 4;
@@ -157,14 +160,22 @@ function check_filled(){
 	return (count);
 }
 
-const button = document.getElementById("button");
-button.addEventListener("click", validate);
+function check_valid(){
+	let count = 4;
+	if (na.parentElement.classList.contains("error"))
+		count--;
+	if (em.parentElement.classList.contains("error"))
+		count--;
+	if (pass1.parentElement.classList.contains("error"))
+		count--;
+	if (pass2.parentElement.classList.contains("error"))
+		count--;
+	return(count);
+}
 
 function validate(event){
-	if (check_filled() == 4 && )
+	if (check_filled() == 4 && check_valid()  == 4)
 	{
 		alert("La cuenta se ha creado correctamente");
 	}
 }
-
-
