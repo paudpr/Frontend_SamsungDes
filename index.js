@@ -12,18 +12,21 @@ function check_text(event){
 		parent_elem.classList.remove("valid");
 		parent_elem.classList.add("error");
 		msg_error.textContent = msg_error.dataset.mensaje;
+		return(1);
+	}
+	else if (event.target.value == "")
+	{
+		parent_elem.classList.remove("error");
+		parent_elem.classList.remove("valid");
+		msg_error.textContent = "";
+		return (-1);
 	}
 	else
 	{
 		parent_elem.classList.add("valid");
 		parent_elem.classList.remove("error");
 		msg_error.textContent = "";
-	}
-	if (event.target.value == "")
-	{
-		parent_elem.classList.remove("error");
-		parent_elem.classList.remove("valid");
-		msg_error.textContent = "";
+		return(0);
 	}
 }
 
@@ -40,17 +43,20 @@ function check_email(event){
 		parent_elem.classList.remove("error");
 		parent_elem.classList.add("valid");
 		msg_error.textContent = "";
+		return(1);
+	}
+	else if (event.target.value == "")
+	{
+		parent_elem.classList.remove("error");
+		parent_elem.classList.remove("valid");
+		msg_error.textContent = "";
+		return (-1);
 	}
 	else{
 		parent_elem.classList.add("error");
 		parent_elem.classList.remove("valid");
 		msg_error.textContent = msg_error.dataset.mensaje;
-	}
-	if (event.target.value == "")
-	{
-		parent_elem.classList.remove("error");
-		parent_elem.classList.remove("valid");
-		msg_error.textContent = "";
+		return(0);
 	}
 }
 
@@ -67,18 +73,21 @@ function check_password(event) {
 		parent_elem.classList.remove("valid");
 		parent_elem.classList.add("error");
 		msg_error.textContent = msg_error.dataset.mensaje;
+		return(1);
+	}
+	else if (event.target.value == "")
+	{
+		parent_elem.classList.remove("error");
+		parent_elem.classList.remove("valid");
+		msg_error.textContent = "";
+		return (-1);
 	}
 	else
 	{
 		parent_elem.classList.add("valid");
 		parent_elem.classList.remove("error");
 		msg_error.textContent = "";
-	}
-	if (event.target.value == "")
-	{
-		parent_elem.classList.remove("error");
-		parent_elem.classList.remove("valid");
-		msg_error.textContent = "";
+		return(0);
 	}
 }
 
@@ -96,106 +105,66 @@ function check_confirm_password(event){
 		parent_elem.classList.remove("valid");
 		parent_elem.classList.add("error");
 		msg_error.textContent = msg_error.dataset.mensaje;
+		return(1);
+	}
+	else if (event.target.value == "")
+	{
+		parent_elem.classList.remove("error");
+		parent_elem.classList.remove("valid");
+		msg_error.textContent = "";
+		return (-1);
 	}
 	else
 	{
 		parent_elem.classList.add("valid");
 		parent_elem.classList.remove("error");
 		msg_error.textContent = "";
-	}
-	if (event.target.value == "")
-	{
-		parent_elem.classList.remove("error");
-		parent_elem.classList.remove("valid");
-		msg_error.textContent = "";
+		return (0);
 	}
 }
 
-// const form = document.querySelector('form');
-// const submit_button = document.getElementById('send_button');
-// const inputs = form.querySelectorAll('input');
+function check_filled(){
+	var count = 4;
 
-// inputs.forEach((input) => {
-//   input.addEventListener('input', check_valid_input);
-// });
-
-
-function is_validated() {
-	const form = document.getElementById("formulario");
-	const form_elem = form.elements;
-	let is_valid = true;
-
-	for (let i = 0; i < form_elem.length; i++)
+	if (na.value.length == 0)
 	{
-		const elem = form_elem[i];
-
-		if(elem.nodeName !== "button" && !elem.classList.contains("valid"))
-		{
-			is_valid = false;
-			break;
-		}
+		na.parentElement.parentElement.getElementsByTagName("p")[0].textContent = "Rellene este campo";
+		na.parentElement.classList.add("error");
+		na.parentElement.classList.remove("valid");
+		count--;
 	}
-	return is_valid
-}
-
-
-
-
-
-
-
-
-function check_valid_input(event)
-{
-	if (!is_validated())
+	if (em.value.length == 0)
 	{
-		alert("La inscripción se ha realizado correctamente");
+		em.parentElement.parentElement.getElementsByTagName("p")[0].textContent = "Rellene este campo";
+		em.parentElement.classList.add("error");
+		em.parentElement.classList.remove("valid");
+		count--;
 	}
-	// funcion que te valide id a id de los campos si son validos o no -> return alerta aqui;
-	// sino, alerta en esa funcion
-   
+	if (pass1.value.length == 0)
+	{
+		pass1.parentElement.parentElement.getElementsByTagName("p")[0].textContent = "Rellene este campo";
+		pass1.parentElement.classList.add("error");
+		pass1.parentElement.classList.remove("valid");
+		count--;
+	}
+	if (pass2.value.length == 0)
+	{
+		pass2.parentElement.parentElement.getElementsByTagName("p")[0].textContent = "Rellene este campo";
+		pass2.parentElement.classList.add("error");
+		pass2.parentElement.classList.remove("valid");
+		count--;
+	}
+	return (count);
 }
 
-// function do_alert_valid(event)
-// {
-// 	var  input_list = document.getElementById("nombre");
-// 	let  valid = true;
-// 	const msg_error = input_list.target.parentElement.parentElement.getElementsByTagName("p")[0];
+const button = document.getElementById("button");
+button.addEventListener("click", validate);
 
-// 	// alert(input_list.value);
-// 	if (input_list.value == "")
-// 	{
-// 		alert("sdfgdsg");
-
-// 	}
-		
-	
-// }
-
-/*
-function check_valid_input() 
-{
-  let valid = true;
-
-  inputs.forEach((input) => {
-    if (input.value.trim() === '')
+function validate(event){
+	if (check_filled() == 4 && )
 	{
-      valid = false;
-      input.parentElement.classList.remove('valid');
-      input.parentElement.classList.add('error');
-      input.parentElement.parentElement.querySelector('p').textContent = 'Rellene este campo';
-    } 
-	else if (input.parentElement.classList.contains('error'))
-	{
-      valid = false;
-    } 
-	else
-	{
-      input.parentElement.classList.remove('error');
-      input.parentElement.classList.add('valid');
-    }
-  });
-
-  submit_button.disabled = !valid;
+		alert("La cuenta se ha creado correctamente");
+	}
 }
-*/
+
+
